@@ -110,8 +110,8 @@ post { // Définition des actions à exécuter après l'exécution de toutes les
   success { // Action à exécuter en cas de succès
     slackSend (color: '#00FF00', message: "Serigne - SUCCESSFUL: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL}) - PROD URL => http://${PROD_APP_ENDPOINT} , STAGING URL => http://${STG_APP_ENDPOINT}") // Envoi d'un message de succès via Slack
   }
-  failure { // Action à exécuter en cas d'échec
-    slackSend (color: '#FF0000', message: "Oups - FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})") // Envoi d'un message d'échec via Slack
-  }   
-}  
-    }
+failure {
+            slackSend (color: '#FF0000', message: "Serigne - FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
+          }   
+    }  
+}
