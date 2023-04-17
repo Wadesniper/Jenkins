@@ -114,5 +114,3 @@ post { // Définition des actions à exécuter après l'exécution de toutes les
     slackSend (color: '#FF0000', message: "Oups - FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})") // Envoi d'un message d'échec via Slack
   }   
 }  
-
-
